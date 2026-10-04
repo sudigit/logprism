@@ -5,9 +5,9 @@ Realistic perimeter-device log line builders, shared by the demo generator
 Each builder returns (channel, source_hint, raw) where raw is a str (syslog /
 file line) or a dict (JSON body for the HTTP ingest API).
 
-  KNOWN     -- vendors ULPF ships parsers for (normalize immediately)
+  KNOWN     -- vendors LogPrism ships parsers for (normalize immediately)
   ATTACK    -- the same vendors during an incident
-  DRIFT     -- formats ULPF has NO parser for yet (land in the DLQ -> self-heal)
+  DRIFT     -- formats LogPrism has NO parser for yet (land in the DLQ -> self-heal)
 """
 import json
 import random

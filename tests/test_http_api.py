@@ -10,7 +10,7 @@ def test_console_routes_serve_the_app():
     for path in ("/", "/dashboard", "/events", "/selfheal", "/parsers"):
         resp = client.get(path)
         assert resp.status_code == 200
-        assert b"ULPF Console" in resp.data
+        assert b"LogPrism Console" in resp.data
 
 
 def test_metrics_endpoint():
@@ -68,4 +68,4 @@ def test_parser_registry_endpoints():
 
 
 def test_schema_is_published():
-    assert client.get("/api/schema").get_json()["title"].startswith("ULPF Normalized Event")
+    assert client.get("/api/schema").get_json()["title"].startswith("LogPrism Normalized Event")

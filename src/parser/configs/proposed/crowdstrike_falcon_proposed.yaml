@@ -1,0 +1,32 @@
+# Proposed by LogPrism self-heal -- NOT LIVE until a human promotes it.
+# cluster: 0410aa083e70 (JSON {CommandLine, ComputerName, ImageFileName, RawProcessId, UserName, …}) on channel http
+# generator: Structure inference (air-gapped, deterministic)
+# validation: parses 24/24 samples; regression PASSED
+source_id: crowdstrike_falcon
+version: v1
+log_name: crowdstrike_falcon
+product:
+  name: crowdstrike_falcon
+  vendor_name: unknown
+channels:
+- http
+priority: 55
+fingerprint:
+  type: json_key
+  key: vendor
+  value: crowdstrike_falcon
+tokenize:
+  type: json
+ocsf:
+  class_uid: 1007
+  activity: Launch
+mapping:
+  fields:
+    aid: device.uid
+    ComputerName: device.hostname
+    UserName: actor.user.name
+    ImageFileName: process.file.path
+    CommandLine: process.cmd_line
+  timestamp:
+    source: timestamp
+    format: epoch_ms

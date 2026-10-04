@@ -1,4 +1,4 @@
-# ULPF — Universal Log Pre-processing Framework (Prototype)
+# LogPrism — Universal Log Pre-processing Framework (Prototype)
 
 Ingests perimeter-device logs in different formats (syslog key-value, JSON,
 CSV-ish) and normalizes them into one common OCSF-style schema, while
@@ -53,8 +53,8 @@ core pipeline.
 
 ```bash
 # 1. Unzip and enter the project
-unzip ulpf.zip
-cd ulpf
+unzip logprism.zip
+cd logprism
 
 # 2. Create and activate a virtual environment
 python3 -m venv .venv
@@ -80,7 +80,7 @@ You should see:
 ### 6. In a second terminal, feed it sample logs
 
 ```bash
-cd ulpf
+cd logprism
 source .venv/bin/activate
 python tools/generate_sample_logs.py --count 10 --bad
 ```
@@ -134,7 +134,7 @@ DuckDB, or point Spark/Athena at the folder.
 ## Option B — Run containerized (Docker)
 
 ```bash
-cd ulpf
+cd logprism
 docker compose up --build
 ```
 
@@ -151,7 +151,7 @@ container, uncomment the `ULPF_OLLAMA_URL` line in `docker-compose.yml`.
 ## Project layout
 
 ```
-ulpf/
+logprism/
 ├── src/
 │   ├── main.py              # entrypoint — starts all ingestion channels + API
 │   ├── config.py            # all paths/ports/thresholds (env-overridable)

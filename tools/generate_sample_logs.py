@@ -1,5 +1,5 @@
 """
-Scenario-based perimeter log simulator for ULPF.
+Scenario-based perimeter log simulator for LogPrism.
 
 Sends realistic traffic from 8 vendors over the real ingestion channels:
   UDP syslog :5514   pfSense, Cisco ASA, FortiGate, Palo Alto (CSV), Check Point (CEF), Juniper (LEEF)
@@ -9,7 +9,7 @@ Sends realistic traffic from 8 vendors over the real ingestion channels:
 Scenarios:
   normal  legitimate enterprise baseline
   attack  port scans, exploit attempts, C2 / exfil from one attacker IP
-  drift   formats ULPF has no parser for yet (SonicWall, Juniper text, CrowdStrike, pfSense IPv6)
+  drift   formats LogPrism has no parser for yet (SonicWall, Juniper text, CrowdStrike, pfSense IPv6)
           -> DLQ -> the self-heal watcher proposes parsers within seconds
   demo    scripted ~45 s walkthrough: normal -> attack -> drift
 
@@ -94,7 +94,7 @@ def run(sender: Sender, scenario: str, eps: float, duration: float = 0, count: i
 
 def demo(sender: Sender):
     print("=" * 66)
-    print("  ULPF live demo  --  open http://localhost:8080/ alongside")
+    print("  LogPrism live demo  --  open http://localhost:8080/ alongside")
     print("=" * 66)
     print("\n[1/3] Baseline: 8 vendors, 6 formats -> one OCSF schema (15 s @ 40 EPS)")
     run(sender, "normal", 40, duration=15)
@@ -107,7 +107,7 @@ def demo(sender: Sender):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="ULPF perimeter log simulator")
+    ap = argparse.ArgumentParser(description="LogPrism perimeter log simulator")
     ap.add_argument("--scenario", choices=["normal", "attack", "drift", "demo"], default="normal")
     ap.add_argument("--eps", type=float, default=30, help="events per second (default 30)")
     ap.add_argument("--duration", type=float, default=10, help="seconds to run (default 10)")

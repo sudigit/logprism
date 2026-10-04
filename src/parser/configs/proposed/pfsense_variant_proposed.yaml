@@ -1,0 +1,75 @@
+# Proposed by LogPrism self-heal -- NOT LIVE until a human promotes it.
+# cluster: 87de9e6c1074 (filterlog: CSV (26 columns)) on channel udp:5514
+# generator: Structure inference (variant 'pfsense')
+# validation: parses 25/25 samples; regression PASSED
+source_id: pfsense_variant
+version: v1
+log_name: filterlog
+product:
+  name: pfSense
+  vendor_name: Netgate
+channels:
+- udp:5514
+priority: 59
+fingerprint:
+  type: all
+  rules:
+  - type: contains
+    pattern: filterlog
+  - type: contains
+    pattern: ',igb0,'
+tokenize:
+  type: csv
+  delimiter: ','
+  fields:
+  - col1
+  - col2
+  - col3
+  - col4
+  - col5
+  - col6
+  - col7
+  - col8
+  - col9
+  - col10
+  - col11
+  - col12
+  - col13
+  - col14
+  - col15
+  - col16
+  - col17
+  - col18
+  - col19
+  - col20
+  - col21
+  - col22
+  - col23
+  - col24
+  - col25
+  - col26
+  min_columns: 24
+ocsf:
+  class_uid: 4001
+  activity: Traffic
+mapping:
+  fields:
+    col16: src_endpoint.ip
+    col17: dst_endpoint.ip
+    col7: disposition
+    col13: connection_info.protocol_name
+    col18: src_endpoint.port
+    col19: dst_endpoint.port
+  values:
+    col7:
+      block: Blocked
+      pass: Allowed
+  lookups:
+  - from: col7
+    to: activity_name
+    map:
+      block: Refuse
+      pass: Traffic
+    default: Traffic
+  timestamp:
+    source: envelope

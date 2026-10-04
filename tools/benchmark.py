@@ -87,7 +87,7 @@ def main():
     eng_eps = len(corpus) / engine_s
     pipe_eps = n_pipe / pipe_s
     print("=" * 66)
-    print(f" ULPF throughput benchmark  ({len(corpus):,} events, 8 vendors, 6 formats, 1 core)")
+    print(f" LogPrism throughput benchmark  ({len(corpus):,} events, 8 vendors, 6 formats, 1 core)")
     print("=" * 66)
     print(f" engine   (parse+normalize+enrich{'' if args.no_validate else '+validate'}): {eng_eps:10,.0f} EPS  "
           f"-> {fmt(eng_eps * 86400)} events/day/core")

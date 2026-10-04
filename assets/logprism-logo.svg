@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" role="img" aria-label="LogPrism">
+  <rect width="32" height="32" rx="8" fill="#0f1726"/>
+  <g stroke-linecap="round" stroke-width="1.6" fill="none">
+    <path d="M3 9.5 11.4 15.5" stroke="#ff6b6b"/>
+    <path d="M3 15.5h8.4" stroke="#ffd166"/>
+    <path d="M3 21.5 11.4 15.5" stroke="#4cc9f0"/>
+  </g>
+  <path d="M16 6.5 25 24H7Z" fill="#6ea0ff" fill-opacity=".22" stroke="#9ec1ff" stroke-width="1.4" stroke-linejoin="round"/>
+  <path d="M11.4 15.5h9.2" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/>
+  <path d="M20.6 15.5H29.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+</svg>

@@ -252,7 +252,7 @@ def generate_proposal(cluster_id: str) -> dict:
                      "regression_passed": v.get("regression", {}).get("passed")} for _, t, _, v in scored[1:]]
 
     label = entries[0].get("cluster_label") or cluster_id
-    header = (f"# Proposed by ULPF self-heal -- NOT LIVE until a human promotes it.\n"
+    header = (f"# Proposed by LogPrism self-heal -- NOT LIVE until a human promotes it.\n"
               f"# cluster: {cluster_id} ({label}) on channel {channel}\n"
               f"# generator: {generator}\n"
               f"# validation: parses {validation['parsed']}/{validation['total']} samples; "
@@ -350,7 +350,7 @@ def promote(proposal_id: int, yaml_text: str = None, approved_by: str = "operato
     else:
         dest = config.PARSER_CONFIG_DIR / f"{cfg_dict['source_id']}_v1.yaml"
 
-    header = (f"# Promoted by ULPF self-heal {ts} from proposal #{proposal_id} "
+    header = (f"# Promoted by LogPrism self-heal {ts} from proposal #{proposal_id} "
               f"(cluster {p['cluster_id']}), approved by {approved_by}.\n"
               f"# Validation: {validation.get('parsed', '?')}/{validation.get('total', '?')} samples, "
               f"regression {validation['regression']['total']} corpus events passed.")

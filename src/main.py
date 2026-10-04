@@ -1,5 +1,5 @@
 """
-ULPF entrypoint.
+LogPrism entrypoint.
 
 Starts:
   - durable Redis Streams buffer + worker pool (or direct in-process fallback)
@@ -24,7 +24,7 @@ def main():
     logging.getLogger("werkzeug").setLevel(logging.WARNING)
 
     print("=" * 64)
-    print(" Universal Log Pre-processing Framework (ULPF)")
+    print(" LogPrism - Universal Log Pre-processing Framework")
     print("=" * 64)
 
     engine = get_engine()

@@ -28,14 +28,14 @@ def _get_int(env_key: str, default: int, min_val: Optional[int] = None, max_val:
     try:
         int_value = int(value)
         if min_val is not None and int_value < min_val:
-            logger.warning(f"ULPF config: {env_key}={int_value} is below minimum {min_val}, using default {default}")
+            logger.warning(f"LogPrism config: {env_key}={int_value} is below minimum {min_val}, using default {default}")
             return default
         if max_val is not None and int_value > max_val:
-            logger.warning(f"ULPF config: {env_key}={int_value} is above maximum {max_val}, using default {default}")
+            logger.warning(f"LogPrism config: {env_key}={int_value} is above maximum {max_val}, using default {default}")
             return default
         return int_value
     except ValueError:
-        logger.warning(f"ULPF config: {env_key}={value} is not a valid integer, using default {default}")
+        logger.warning(f"LogPrism config: {env_key}={value} is not a valid integer, using default {default}")
         return default
 
 
@@ -47,7 +47,7 @@ def _get_float(env_key: str, default: float) -> float:
     try:
         return float(value)
     except ValueError:
-        logger.warning(f"ULPF config: {env_key}={value} is not a valid float, using default {default}")
+        logger.warning(f"LogPrism config: {env_key}={value} is not a valid float, using default {default}")
         return default
 
 
