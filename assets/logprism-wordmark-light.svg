@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 88" width="440" height="88" role="img" aria-label="LogPrism">
+  <g transform="translate(8 8) scale(2.25)">
+    <rect width="32" height="32" rx="8" fill="#0f1726"/>
+    <g stroke-linecap="round" stroke-width="1.6" fill="none">
+      <path d="M3 9.5 11.4 15.5" stroke="#ff6b6b"/>
+      <path d="M3 15.5h8.4" stroke="#ffd166"/>
+      <path d="M3 21.5 11.4 15.5" stroke="#4cc9f0"/>
+    </g>
+    <path d="M16 6.5 25 24H7Z" fill="#6ea0ff" fill-opacity=".22" stroke="#9ec1ff" stroke-width="1.4" stroke-linejoin="round"/>
+    <path d="M11.4 15.5h9.2" stroke="#fff" stroke-opacity=".55" stroke-width="1.2"/>
+    <path d="M20.6 15.5H29.5" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <text x="98" y="50" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="40" font-weight="700" fill="#14171c" letter-spacing="-0.5">LogPrism</text>
+  <text x="100" y="74" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="14" fill="#5d6572">Universal Log Pre-processing Framework</text>
+</svg>
